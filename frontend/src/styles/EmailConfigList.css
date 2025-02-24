@@ -1,0 +1,56 @@
+/* Configured Emails Box */
+.config-list {
+  flex: 1;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  min-height: 407px;
+
+}
+
+/* List Items */
+.config-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.config-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Buttons */
+.fetch-btn, .delete-btn {
+  background: linear-gradient(45deg, #a855f7, #ff79c6);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.fetch-btn:hover, .delete-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Start Date Input */
+.fetch-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.fetch-controls input {
+  padding: 10px;
+  border: 2px solid #a855f7;
+  border-radius: 5px;
+  font-size: 14px;
+}

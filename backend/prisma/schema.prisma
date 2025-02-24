@@ -1,0 +1,35 @@
+// Prisma schema for PostgreSQL database
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model EmailIngestionConfig {
+  id        String  @id @default(uuid())
+  email     String  @unique
+  type      String  // IMAP, POP3, Gmail API, etc.
+  host      String?
+  username  String
+  password  String
+  createdAt DateTime @default(now())
+
+  // Relation: One EmailIngestionConfig can have many EmailMetadata
+  emailMetadata EmailMetadata[]
+}
+
+model EmailMetadata {
+  id                String   @id @default(uuid())
+  fromAddress       String
+  subject           String
+  dateReceived      DateTime @default(now())
+  attachmentFileName String
+  emailConfigId     String
+  emailConfig       EmailIngestionConfig @relation(fields: [emailConfigId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,9 @@
+.navbar {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 4px solid #a855f7; /* Bottom border only */
+}
